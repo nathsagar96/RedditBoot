@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: redditboot
+  cache:
+    type: redis
+    redis:
+      time-to-live: ${REDIS_TTL:60000}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/reddit}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+  jpa:
+    open-in-view: false
+  output:
+    ansi:
+      enabled: always
+
+server:
+  port: ${PORT:8080}
+  shutdown: graceful
+
