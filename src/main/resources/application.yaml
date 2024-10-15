@@ -18,6 +18,8 @@ spring:
   output:
     ansi:
       enabled: always
+  flyway:
+    validate-migration-naming: true
 
 server:
   port: ${PORT:8080}
